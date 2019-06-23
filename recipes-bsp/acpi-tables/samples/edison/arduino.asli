@@ -208,6 +208,7 @@ Scope (\_SB.PCI0.I2C1)
                 Package () {"i2c6-scl-mux", "ICMX"},
                 Package () {"i2c6-sda-pu", "IDPU"},
                 Package () {"i2c6-scl-pu", "ICPU"},
+                Package () {"vshield-en", "VSEN"},
 #endif
             }
 #endif
@@ -250,6 +251,16 @@ Scope (\_SB.PCI0.I2C1)
                 Package () {"gpios", Package () {13, 0}},
                 Package () {"output-high", 1},
                 Package () {"line-name", "i2c6-scl-pu"},
+            }
+        })
+
+        Name (VSEN, Package () {
+            ToUUID("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+            Package () {
+                Package () {"gpio-hog", 1},
+                Package () {"gpios", Package () {14, 0}},
+                Package () {"output-high", 1},
+                Package () {"line-name", "vshield-en"},
             }
         })
 #endif
